@@ -34,5 +34,10 @@ namespace OnlineLibrary
             
             Form1.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
         }
+
+        private void UserLogin_Load(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
