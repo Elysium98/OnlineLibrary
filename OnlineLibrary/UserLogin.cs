@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineLibrary.db.daos;
+using OnlineLibrary.db.models;
+using OnlineLibrary.controller;
 
 namespace OnlineLibrary
 {
@@ -33,9 +36,16 @@ namespace OnlineLibrary
                 Form1.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
         }
 
-        private void UserLogin_Load(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-            //
+            User user = new User();
+            user.Email = textEmail.Text;
+            user.Password = GUIController.encrypt(textPassword.Text);
+            UserDao.login(user);
+            if(GUIController.checkLoginSucces==true)
+            {
+
+            }
         }
     }
 }

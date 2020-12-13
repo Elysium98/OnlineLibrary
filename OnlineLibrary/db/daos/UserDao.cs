@@ -13,7 +13,6 @@ namespace OnlineLibrary.db.daos
 {
     class UserDao
     {
-        UserRegister test = new UserRegister();
         public static void register(User user)
         {
             string role = "student";
@@ -41,11 +40,6 @@ namespace OnlineLibrary.db.daos
                 {
                     MessageBox.Show("V-ati inregistrat cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GUIController.checkRegisterSucces = true;
-                    UserLogin login = new UserLogin();
-                    login.Dock = DockStyle.Fill;
-                    Form1.Instance.PnlContainer.Controls.Add(login);
-                    Form1.Instance.PnlContainer.Controls["UserLogin"].BringToFront();
-
                 }
             }
             catch (Exception e)
@@ -54,6 +48,42 @@ namespace OnlineLibrary.db.daos
             }
 
             con.Close();
+        }
+
+        public static void login(User user)
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if (con == null)
+            {
+                throw new Exception("Nu s-a putut realiza conexiunea la baza de date");
+            }
+
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = "SELECT role FROM users WHERE @email=email  AND @password=password";
+            com.Parameters.AddWithValue("@email", user.Email);
+            com.Parameters.AddWithValue("@password", user.Password);
+            MySqlDataReader login = com.ExecuteReader();
+            if (login.Read())
+            {
+                GUIController.checkLoginSucces = true;
+                MessageBox.Show("V-ati autentificat cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                user.Role = login["role"].ToString();
+                if (user.Role.Equals("student"))
+                {
+                    MessageBox.Show("V-ati logat ca student", "Buna ziua", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+               if (user.Role.Equals("librarian"))
+                {
+                    MessageBox.Show("V-ati logat ca bibliotecar", "Buna ziua", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nu s-a reusit logarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //throw new Exception("Nu s-a putut face autentificarea");
+            }
         }
     }
 }

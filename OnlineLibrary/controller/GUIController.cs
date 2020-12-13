@@ -29,5 +29,7 @@ namespace OnlineLibrary.controller
             byte[] data = md5.ComputeHash(utf8.GetBytes(parola));
             return Convert.ToBase64String(data);
         }
+
+        public static Boolean checkLoginSucces;
     }
 }

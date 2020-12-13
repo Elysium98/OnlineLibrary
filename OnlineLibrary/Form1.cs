@@ -38,11 +38,6 @@ namespace OnlineLibrary
         private void Form1_Load(object sender, EventArgs e)
         {
             _obj = this;
-           /* UserRegister reg = new UserRegister();
-            reg.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(reg);
-            panelContainer.Controls["UserRegister"].BringToFront();
-           */
             UserLogin login = new UserLogin();
             login.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(login);
