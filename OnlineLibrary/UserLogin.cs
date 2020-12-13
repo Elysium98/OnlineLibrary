@@ -27,12 +27,10 @@ namespace OnlineLibrary
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
-          
                 UserRegister register = new UserRegister();
                 register.Dock = DockStyle.Fill;
                 Form1.Instance.PnlContainer.Controls.Add(register);
-            
-            Form1.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
+                Form1.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
         }
 
         private void UserLogin_Load(object sender, EventArgs e)
