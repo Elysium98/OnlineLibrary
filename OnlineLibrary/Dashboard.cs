@@ -12,6 +12,23 @@ namespace OnlineLibrary
 {
     public partial class Dashboard : Form
     {
+        static Dashboard _obj;
+        public static Dashboard Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new Dashboard();
+                }
+                return _obj;
+            }
+        }
+        public Panel PnlContainer
+        {
+            get { return panelContainer; }
+            set { panelContainer = value; }
+        }
         public Dashboard()
         {
             InitializeComponent();
@@ -30,6 +47,15 @@ namespace OnlineLibrary
         {
             AddBooks ceva = new AddBooks();
             ceva.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            _obj = this;
+            UserLogin login = new UserLogin();
+            login.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(login);
+            panelContainer.Controls["UserLogin"].BringToFront();
         }
     }
 }

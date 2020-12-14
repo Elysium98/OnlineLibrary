@@ -32,8 +32,8 @@ namespace OnlineLibrary
         {
                 UserRegister register = new UserRegister();
                 register.Dock = DockStyle.Fill;
-                Form1.Instance.PnlContainer.Controls.Add(register);
-                Form1.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
+                Dashboard.Instance.PnlContainer.Controls.Add(register);
+                Dashboard.Instance.PnlContainer.Controls["UserRegister"].BringToFront();
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -42,9 +42,9 @@ namespace OnlineLibrary
             user.Email = textEmail.Text;
             user.Password = GUIController.encrypt(textPassword.Text);
             UserDao.login(user);
-            if(GUIController.checkLoginSucces==true)
+            if (GUIController.checkLoginSucces == true)
             {
-
+                Dashboard.Instance.PnlContainer.Controls["UserLogin"].Dispose();
             }
         }
     }

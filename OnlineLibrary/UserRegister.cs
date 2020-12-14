@@ -55,8 +55,8 @@ namespace OnlineLibrary
                     textPassword.Clear();
                     UserLogin login = new UserLogin();
                     login.Dock = DockStyle.Fill;
-                    Form1.Instance.PnlContainer.Controls.Add(login);
-                    Form1.Instance.PnlContainer.Controls["UserLogin"].BringToFront();
+                    Dashboard.Instance.PnlContainer.Controls.Add(login);
+                    Dashboard.Instance.PnlContainer.Controls["UserLogin"].BringToFront();
                 }
                 else
                 {
