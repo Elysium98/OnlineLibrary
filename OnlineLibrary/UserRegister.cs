@@ -24,17 +24,52 @@ namespace OnlineLibrary
 
         private void textFullName_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textFullName.Text.Equals("Please enter your Full Name"))
+            if (textFullName.Text.Equals("Name"))
             {
                 textFullName.Clear();
             }
+            if (string.IsNullOrEmpty(textEmail.Text))
+            {
+                textEmail.Text = "Email";
+            }
+            if (string.IsNullOrEmpty(textPassword.Text))
+            {
+                textPassword.PasswordChar = '\0';
+                textPassword.Text = "Password";
+            }
+
         }
 
+        private void textPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textPassword.Text.Equals("Password"))
+            {
+                textPassword.Clear();
+                textPassword.PasswordChar = '*';
+            }
+            if (string.IsNullOrEmpty(textEmail.Text))
+            {
+                textEmail.Text = "Email";
+            }
+            if (string.IsNullOrEmpty(textFullName.Text))
+            {
+                textFullName.Text = "Name";
+            }
+        }
         private void textEmail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textEmail.Text.Equals("Please enter your email"))
+            if (textEmail.Text.Equals("Email"))
             {
                 textEmail.Clear();
+            }
+            if (string.IsNullOrEmpty(textPassword.Text))
+            {
+                textPassword.PasswordChar = '\0';
+                textPassword.Text = "Password";
+            }
+            if (string.IsNullOrEmpty(textFullName.Text))
+            {
+                textFullName.Text = "Name";
             }
         }
 

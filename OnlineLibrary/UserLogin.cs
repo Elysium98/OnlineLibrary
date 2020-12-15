@@ -26,6 +26,11 @@ namespace OnlineLibrary
             {
                 textEmail.Clear();
             }
+           if(string.IsNullOrEmpty(textPassword.Text))
+            {
+                textPassword.PasswordChar ='\0';
+                textPassword.Text = "Password";
+            }
         }
 
         private void btn_Register_Click(object sender, EventArgs e)
@@ -45,6 +50,19 @@ namespace OnlineLibrary
             if (GUIController.checkLoginSucces == true)
             {
                 Dashboard.Instance.PnlContainer.Controls["UserLogin"].Dispose();
+            }
+        }
+
+        private void textPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textPassword.Text.Equals("Password"))
+            {
+                textPassword.Clear();
+                textPassword.PasswordChar='*';
+            }
+            if (string.IsNullOrEmpty(textEmail.Text))
+            {
+                textEmail.Text = "Email";
             }
         }
     }
