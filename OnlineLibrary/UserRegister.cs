@@ -85,6 +85,7 @@ namespace OnlineLibrary
                 UserDao.register(user);
                 if (GUIController.checkRegisterSucces == true)
                 {
+                  //  Dashboard.Instance.PnlContainer.Controls["UserRegister"].Dispose();
                     textEmail.Clear();
                     textFullName.Clear();
                     textPassword.Clear();

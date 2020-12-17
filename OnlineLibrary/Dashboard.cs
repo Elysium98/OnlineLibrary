@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineLibrary.controller;
 
 namespace OnlineLibrary
 {
@@ -45,17 +46,37 @@ namespace OnlineLibrary
 
         private void addNewBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBooks ceva = new AddBooks();
+            AddBook ceva = new AddBook();
             ceva.Show();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            menuStrip1.Hide();
             _obj = this;
             UserLogin login = new UserLogin();
             login.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(login);
             panelContainer.Controls["UserLogin"].BringToFront();
+            if(GUIController.checkLoginSucces==true)
+            {
+                panelContainer.Controls["UserLogin"].Dispose();
+            }
+            
+        }
+
+        public void showMenuLibrarian()
+        {
+            menuStrip1.Show();
+            studentToolStripMenuItem.Visible = false;
+            issueBooksToolStripMenuItem.Visible = false;
+            returnBooksToolStripMenuItem.Visible = false;
+            completeBookDetailsToolStripMenuItem.Visible = false;
+        }
+        public void showMenuStudent()
+        {
+            menuStrip1.Show();
+            addNewBooksToolStripMenuItem.Visible = false;
         }
     }
 }

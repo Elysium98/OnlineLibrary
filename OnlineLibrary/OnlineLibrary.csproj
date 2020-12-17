@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddBooks.cs">
+    <Compile Include="AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddBooks.Designer.cs">
-      <DependentUpon>AddBooks.cs</DependentUpon>
+    <Compile Include="AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
     <Compile Include="controller\GUIController.cs" />
     <Compile Include="Dashboard.cs">
@@ -61,6 +61,7 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="db\daos\UserDao.cs" />
+    <Compile Include="db\models\Book.cs" />
     <Compile Include="db\models\User.cs" />
     <Compile Include="db\utils\DBConnection.cs" />
     <Compile Include="Form1.cs">
@@ -83,8 +84,8 @@
     <Compile Include="UserRegister.Designer.cs">
       <DependentUpon>UserRegister.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddBooks.resx">
-      <DependentUpon>AddBooks.cs</DependentUpon>
+    <EmbeddedResource Include="AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

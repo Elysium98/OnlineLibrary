@@ -49,7 +49,15 @@ namespace OnlineLibrary
             UserDao.login(user);
             if (GUIController.checkLoginSucces == true)
             {
-                Dashboard.Instance.PnlContainer.Controls["UserLogin"].Dispose();
+                Dashboard.Instance.PnlContainer.Controls.Clear();
+                 if(GUIController.roleAccess.Equals("librarian"))
+                  {
+                      Dashboard.Instance.showMenuLibrarian();
+                  }
+                  else 
+                  {
+                      Dashboard.Instance.showMenuStudent();
+                  }
             }
         }
 

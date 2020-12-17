@@ -31,5 +31,7 @@ namespace OnlineLibrary.controller
         }
 
         public static Boolean checkLoginSucces;
+
+        public static string roleAccess;
     }
 }

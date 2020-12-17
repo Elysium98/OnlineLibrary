@@ -28,8 +28,8 @@ namespace OnlineLibrary.db.daos
             cmd.CommandText = "INSERT INTO users(fullname,email,password,role) VALUES(@fullname,@email,@password,@role)";
             cmd.Parameters.AddWithValue("@fullname", user.FullName);
             cmd.Parameters.AddWithValue("@email", user.Email);
-            cmd.Parameters.AddWithValue("@password",user.Password);
-            cmd.Parameters.AddWithValue("@role",role);
+            cmd.Parameters.AddWithValue("@password", user.Password);
+            cmd.Parameters.AddWithValue("@role", role);
             try
             {
                 if (cmd.ExecuteNonQuery() != 1)
@@ -72,11 +72,13 @@ namespace OnlineLibrary.db.daos
                 if (user.Role.Equals("student"))
                 {
                     MessageBox.Show("V-ati logat ca student", "Buna ziua", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GUIController.roleAccess = "student";
                 }
                 else
                if (user.Role.Equals("librarian"))
                 {
                     MessageBox.Show("V-ati logat ca bibliotecar", "Buna ziua", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GUIController.roleAccess = "librarian";
                 }
             }
             else
@@ -85,5 +87,41 @@ namespace OnlineLibrary.db.daos
                 //throw new Exception("Nu s-a putut face autentificarea");
             }
         }
+
+        public static void insertBook(Book book)
+        {
+            DateTime today = DateTime.Today;
+            book.DateAdded = today;
+            MySqlConnection con = DBConnection.getConnection();
+
+            if (con == null)
+            {
+                throw new Exception("Conexiunea la baza de date nu s-a realizat.");
+            }
+
+            MySqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandText = "INSERT INTO books(fullname,email,password,role) VALUES(@fullname,@email,@password,@role)";
+            cmd.Parameters.AddWithValue("@author", book.Author);
+            cmd.Parameters.AddWithValue("@bookname", book.BookName);
+            cmd.Parameters.AddWithValue("@dateadded", book.DateAdded);
+            try
+            {
+                if (cmd.ExecuteNonQuery() != 1)
+                {
+                    MessageBox.Show("Email existent", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Carte inserata cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
     }
-}
+    }
