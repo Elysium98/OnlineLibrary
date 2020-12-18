@@ -101,7 +101,7 @@ namespace OnlineLibrary.db.daos
 
             MySqlCommand cmd = con.CreateCommand();
 
-            cmd.CommandText = "INSERT INTO books(fullname,email,password,role) VALUES(@fullname,@email,@password,@role)";
+            cmd.CommandText = "INSERT INTO books(author,bookname,dateadded) VALUES(@author,@bookname,@dateadded)";
             cmd.Parameters.AddWithValue("@author", book.Author);
             cmd.Parameters.AddWithValue("@bookname", book.BookName);
             cmd.Parameters.AddWithValue("@dateadded", book.DateAdded);
@@ -119,7 +119,8 @@ namespace OnlineLibrary.db.daos
             }
             catch (Exception e)
             {
-                MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(e.Message);
+                //MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
