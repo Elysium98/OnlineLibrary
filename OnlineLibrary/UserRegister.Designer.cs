@@ -40,6 +40,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -166,11 +167,24 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
+            // btn_Back
+            // 
+            this.btn_Back.BackColor = System.Drawing.Color.Black;
+            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Back.ForeColor = System.Drawing.Color.OldLace;
+            this.btn_Back.Location = new System.Drawing.Point(26, 15);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(34, 30);
+            this.btn_Back.TabIndex = 8;
+            this.btn_Back.Text = "<";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            // 
             // UserRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel3);
@@ -206,5 +220,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_Back;
     }
 }
