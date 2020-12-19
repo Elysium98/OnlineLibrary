@@ -28,45 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
             this.textAuthor = new System.Windows.Forms.TextBox();
             this.textBookName = new System.Windows.Forms.TextBox();
             this.btn_insertBook = new System.Windows.Forms.Button();
+            this.textLanguage = new System.Windows.Forms.TextBox();
+            this.textPublication = new System.Windows.Forms.TextBox();
+            this.textPages = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // textAuthor
             // 
-            this.textAuthor.Location = new System.Drawing.Point(367, 71);
+            this.textAuthor.BackColor = System.Drawing.Color.Black;
+            this.textAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(193)))), ((int)(((byte)(150)))));
+            this.textAuthor.Location = new System.Drawing.Point(624, 191);
+            this.textAuthor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textAuthor.Name = "textAuthor";
-            this.textAuthor.Size = new System.Drawing.Size(149, 22);
+            this.textAuthor.Size = new System.Drawing.Size(316, 28);
             this.textAuthor.TabIndex = 0;
             // 
             // textBookName
             // 
-            this.textBookName.Location = new System.Drawing.Point(367, 108);
+            this.textBookName.BackColor = System.Drawing.Color.Black;
+            this.textBookName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBookName.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBookName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(193)))), ((int)(((byte)(150)))));
+            this.textBookName.Location = new System.Drawing.Point(624, 110);
+            this.textBookName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBookName.Name = "textBookName";
-            this.textBookName.Size = new System.Drawing.Size(149, 22);
+            this.textBookName.Size = new System.Drawing.Size(316, 30);
             this.textBookName.TabIndex = 0;
             // 
             // btn_insertBook
             // 
-            this.btn_insertBook.Location = new System.Drawing.Point(371, 164);
+            this.btn_insertBook.BackColor = System.Drawing.Color.Black;
+            this.btn_insertBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_insertBook.Font = new System.Drawing.Font("Californian FB", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_insertBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
+            this.btn_insertBook.Location = new System.Drawing.Point(623, 504);
+            this.btn_insertBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_insertBook.Name = "btn_insertBook";
-            this.btn_insertBook.Size = new System.Drawing.Size(114, 23);
+            this.btn_insertBook.Size = new System.Drawing.Size(181, 46);
             this.btn_insertBook.TabIndex = 1;
-            this.btn_insertBook.Text = "Insert Book";
-            this.btn_insertBook.UseVisualStyleBackColor = true;
+            this.btn_insertBook.Text = "Save";
+            this.btn_insertBook.UseVisualStyleBackColor = false;
             this.btn_insertBook.Click += new System.EventHandler(this.btn_insertBook_Click);
+            // 
+            // textLanguage
+            // 
+            this.textLanguage.BackColor = System.Drawing.Color.Black;
+            this.textLanguage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textLanguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(193)))), ((int)(((byte)(150)))));
+            this.textLanguage.Location = new System.Drawing.Point(624, 346);
+            this.textLanguage.Multiline = true;
+            this.textLanguage.Name = "textLanguage";
+            this.textLanguage.Size = new System.Drawing.Size(316, 25);
+            this.textLanguage.TabIndex = 2;
+            // 
+            // textPublication
+            // 
+            this.textPublication.BackColor = System.Drawing.Color.Black;
+            this.textPublication.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPublication.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textPublication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(193)))), ((int)(((byte)(150)))));
+            this.textPublication.Location = new System.Drawing.Point(624, 270);
+            this.textPublication.Multiline = true;
+            this.textPublication.Name = "textPublication";
+            this.textPublication.Size = new System.Drawing.Size(316, 25);
+            this.textPublication.TabIndex = 3;
+            // 
+            // textPages
+            // 
+            this.textPages.BackColor = System.Drawing.Color.Black;
+            this.textPages.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textPages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(193)))), ((int)(((byte)(150)))));
+            this.textPages.Location = new System.Drawing.Point(624, 431);
+            this.textPages.Multiline = true;
+            this.textPages.Name = "textPages";
+            this.textPages.Size = new System.Drawing.Size(316, 25);
+            this.textPages.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(236, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(236, 163);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(290, 56);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(236, 239);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(259, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(236, 315);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(145, 56);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(236, 400);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(241, 56);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
             // 
             // AddBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1101, 663);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textPages);
+            this.Controls.Add(this.textPublication);
+            this.Controls.Add(this.textLanguage);
             this.Controls.Add(this.btn_insertBook);
             this.Controls.Add(this.textBookName);
             this.Controls.Add(this.textAuthor);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddBook";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBook";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,5 +214,13 @@
         private System.Windows.Forms.TextBox textAuthor;
         private System.Windows.Forms.TextBox textBookName;
         private System.Windows.Forms.Button btn_insertBook;
+        private System.Windows.Forms.TextBox textLanguage;
+        private System.Windows.Forms.TextBox textPublication;
+        private System.Windows.Forms.TextBox textPages;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

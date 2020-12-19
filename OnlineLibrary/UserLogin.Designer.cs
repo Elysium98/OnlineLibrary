@@ -38,6 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -50,7 +51,7 @@
             this.btn_Login.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_Login.ForeColor = System.Drawing.Color.OldLace;
             this.btn_Login.Location = new System.Drawing.Point(92, 373);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(221, 40);
             this.btn_Login.TabIndex = 0;
@@ -65,7 +66,7 @@
             this.btn_Register.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_Register.ForeColor = System.Drawing.Color.OldLace;
             this.btn_Register.Location = new System.Drawing.Point(92, 437);
-            this.btn_Register.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Register.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(221, 40);
             this.btn_Register.TabIndex = 0;
@@ -79,7 +80,7 @@
             this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textEmail.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textEmail.Location = new System.Drawing.Point(92, 218);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(221, 24);
@@ -93,7 +94,7 @@
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textPassword.Location = new System.Drawing.Point(92, 301);
-            this.textPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(221, 24);
@@ -147,11 +148,26 @@
             this.panel2.Size = new System.Drawing.Size(221, 4);
             this.panel2.TabIndex = 6;
             // 
+            // btn_Close
+            // 
+            this.btn_Close.BackColor = System.Drawing.Color.Black;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_Close.ForeColor = System.Drawing.Color.OldLace;
+            this.btn_Close.Location = new System.Drawing.Point(330, 3);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(34, 30);
+            this.btn_Close.TabIndex = 7;
+            this.btn_Close.Text = "X";
+            this.btn_Close.UseVisualStyleBackColor = false;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
             // UserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
+            this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
@@ -161,7 +177,7 @@
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.btn_Register);
             this.Controls.Add(this.btn_Login);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserLogin";
             this.Size = new System.Drawing.Size(367, 558);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -183,5 +199,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_Close;
     }
 }
