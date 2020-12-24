@@ -88,41 +88,6 @@ namespace OnlineLibrary.db.daos
             }
         }
 
-        public static void insertBook(Book book)
-        {
-            DateTime today = DateTime.Today;
-            book.DateAdded = today;
-            MySqlConnection con = DBConnection.getConnection();
-
-            if (con == null)
-            {
-                throw new Exception("Conexiunea la baza de date nu s-a realizat.");
-            }
-
-            MySqlCommand cmd = con.CreateCommand();
-
-            cmd.CommandText = "INSERT INTO books(author,bookname,dateadded) VALUES(@author,@bookname,@dateadded)";
-            cmd.Parameters.AddWithValue("@author", book.Author);
-            cmd.Parameters.AddWithValue("@bookname", book.BookName);
-            cmd.Parameters.AddWithValue("@dateadded", book.DateAdded);
-            try
-            {
-                if (cmd.ExecuteNonQuery() != 1)
-                {
-                    MessageBox.Show("Email existent", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show("Carte inserata cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                //MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
+        
     }
     }

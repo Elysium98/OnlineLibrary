@@ -129,5 +129,10 @@ namespace OnlineLibrary
                 textFullName.Focus();
             }
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            Dashboard.Instance.PnlContainer.Controls["UserLogin"].BringToFront();
+        }
     }
 }

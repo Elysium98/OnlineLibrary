@@ -60,6 +60,7 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="db\daos\BooksDao.cs" />
     <Compile Include="db\daos\UserDao.cs" />
     <Compile Include="db\models\Book.cs" />
     <Compile Include="db\models\User.cs" />
@@ -72,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="showBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showBooks.Designer.cs">
+      <DependentUpon>showBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="showBooks.resx">
+      <DependentUpon>showBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>

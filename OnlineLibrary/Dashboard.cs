@@ -46,8 +46,8 @@ namespace OnlineLibrary
 
         private void addNewBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBook ceva = new AddBook();
-            ceva.Show();
+            AddBook book = new AddBook();
+            book.Show();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -77,6 +77,12 @@ namespace OnlineLibrary
         {
             menuStrip1.Show();
             addNewBooksToolStripMenuItem.Visible = false;
+        }
+
+        private void viewBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showBooks viewbooks = new showBooks();
+            viewbooks.Show();
         }
     }
 }

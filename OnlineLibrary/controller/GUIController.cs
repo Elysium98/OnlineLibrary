@@ -31,7 +31,9 @@ namespace OnlineLibrary.controller
         }
 
         public static Boolean checkLoginSucces;
-
         public static string roleAccess;
+        public static Boolean checkInsertSucces;
+        public static Boolean checkDeleteBookSuccess;
+        public static Boolean checkUpdateBookSuccess;
     }
 }

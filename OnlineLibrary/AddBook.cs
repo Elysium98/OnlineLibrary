@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineLibrary.db.daos;
 using OnlineLibrary.db.models;
+using OnlineLibrary.controller;
 
 namespace OnlineLibrary
 {
@@ -24,7 +25,26 @@ namespace OnlineLibrary
             Book book = new Book();
             book.Author = textAuthor.Text;
             book.BookName = textBookName.Text;
-            UserDao.insertBook(book);
+            book.Language = textLanguage.Text;
+            book.NumberOfPages = Convert.ToInt32(textPages.Text);
+            book.DateAdded = DateTime.ParseExact(textDateAdded.Text, "yyyy.MM.dd",null);
+            BooksDao.insertBook(book);
+            if(GUIController.checkInsertSucces==true)
+            {
+                textAuthor.Clear();
+                textBookName.Clear();
+                textLanguage.Clear();
+                textPages.Clear();
+               
+            }
+        }
+
+        private void textDateAdded_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(textDateAdded.Text.Equals("yyyy-mm-dd"))
+            {
+                textDateAdded.Clear();
+            }
         }
     }
 }
