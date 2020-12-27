@@ -46,9 +46,7 @@ namespace OnlineLibrary.db.daos
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
-
-               // MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               MessageBox.Show("Nu s-a reusit inserarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -65,7 +63,6 @@ namespace OnlineLibrary.db.daos
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
-            con.Close();
         }
 
         public static void deleteBook(Book book)
@@ -114,6 +111,34 @@ namespace OnlineLibrary.db.daos
             else
             {
                 GUIController.checkUpdateBookSuccess = true;
+            }
+            con.Close();
+        }
+
+        public static void issueBook(BookIssued book)
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if(con==null)
+            {
+                throw new Exception("Nu s-a putut realiza conexiunea");
+            }
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "INSERT INTO booksissued(`Nume Prenume`,Autor,`Titlu Carte`,`Data Publicare`,Limba,`Nr Pagini`,`Data Imprumut`) VALUES(@numeprenume,@autor,@titlucarte,@datapublicare,@limba,@nrpagini,@dataimprumut)";
+            cmd.Parameters.AddWithValue("@numeprenume", book.Fullname);
+            cmd.Parameters.AddWithValue("@autor", book.Author);
+            cmd.Parameters.AddWithValue("@titlucarte", book.BookName);
+            cmd.Parameters.AddWithValue("@datapublicare", book.DateAdded);
+            cmd.Parameters.AddWithValue("@limba", book.Language);
+            cmd.Parameters.AddWithValue("@nrpagini", book.NumberOfPages);
+            cmd.Parameters.AddWithValue("dataimprumut", book.DateIssued);
+            if(cmd.ExecuteNonQuery()!=1)
+            {
+                MessageBox.Show("Nu s-a putut imprumuta cartea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                GUIController.checkBookIssueSuccess = true;
+                MessageBox.Show("Cartea a fost imprumutata", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             con.Close();
         }

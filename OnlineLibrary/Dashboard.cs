@@ -68,7 +68,6 @@ namespace OnlineLibrary
         public void showMenuLibrarian()
         {
             menuStrip1.Show();
-            studentToolStripMenuItem.Visible = false;
             issueBooksToolStripMenuItem.Visible = false;
             returnBooksToolStripMenuItem.Visible = false;
             completeBookDetailsToolStripMenuItem.Visible = false;
@@ -80,6 +79,12 @@ namespace OnlineLibrary
         }
 
         private void viewBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showBooks viewbooks = new showBooks();
+            viewbooks.Show();
+        }
+
+        private void issueBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showBooks viewbooks = new showBooks();
             viewbooks.Show();

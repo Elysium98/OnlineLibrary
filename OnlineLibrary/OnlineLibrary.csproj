@@ -63,6 +63,7 @@
     <Compile Include="db\daos\BooksDao.cs" />
     <Compile Include="db\daos\UserDao.cs" />
     <Compile Include="db\models\Book.cs" />
+    <Compile Include="db\models\BookIssued.cs" />
     <Compile Include="db\models\User.cs" />
     <Compile Include="db\utils\DBConnection.cs" />
     <Compile Include="Form1.cs">

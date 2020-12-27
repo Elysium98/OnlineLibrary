@@ -60,7 +60,7 @@ namespace OnlineLibrary.db.daos
 
             MySqlCommand com = con.CreateCommand();
 
-            com.CommandText = "SELECT role FROM users WHERE @email=email  AND @password=password";
+            com.CommandText = "SELECT role,fullname FROM users WHERE @email=email  AND @password=password";
             com.Parameters.AddWithValue("@email", user.Email);
             com.Parameters.AddWithValue("@password", user.Password);
             MySqlDataReader login = com.ExecuteReader();
@@ -69,6 +69,7 @@ namespace OnlineLibrary.db.daos
                 GUIController.checkLoginSucces = true;
                 MessageBox.Show("V-ati autentificat cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 user.Role = login["role"].ToString();
+                GUIController.getFullName = login["fullname"].ToString();
                 if (user.Role.Equals("student"))
                 {
                     MessageBox.Show("V-ati logat ca student", "Buna ziua", MessageBoxButtons.OK, MessageBoxIcon.Information);

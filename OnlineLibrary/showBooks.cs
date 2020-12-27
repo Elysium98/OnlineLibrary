@@ -25,6 +25,25 @@ namespace OnlineLibrary
         {
             //dataBooksView.Columns[0].DefaultCellStyle.Format = "d";
             dataBooksView.DataSource = BooksDao.showBooksTable();
+            if(GUIController.roleAccess.Equals("student"))
+            {
+                textAuthor.Hide();
+                textBookName.Hide();
+                textDateAdded.Hide();
+                textLanguage.Hide();
+                textNumberOfPages.Hide();
+                btn_Delete.Hide();
+                btn_Update.Hide();
+                pictureBox1.Hide();
+                pictureBox2.Hide();
+                pictureBox3.Hide();
+                pictureBox4.Hide();
+                pictureBox5.Hide();
+            }
+            else
+            {
+                btn_Issue.Hide();
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -76,6 +95,33 @@ namespace OnlineLibrary
             {
                 MessageBox.Show("Nu s-a reusit actualizarea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btn_Issue_Click(object sender, EventArgs e)
+        {
+            BookIssued bookissued = new BookIssued();
+            bookissued.Author = book.Author;
+            bookissued.BookName = book.BookName;
+            bookissued.Fullname = GUIController.getFullName;
+            bookissued.Language = book.Language;
+            bookissued.NumberOfPages = book.NumberOfPages;
+            bookissued.DateAdded = book.DateAdded;
+            var date = DateTime.Now.ToString("yyyy.MM.dd");
+            bookissued.DateIssued = Convert.ToDateTime(date);
+            try
+            {
+                BooksDao.issueBook(bookissued);
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show("Nicio carte selectata", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if(GUIController.checkBookIssueSuccess==true)
+            {
+                BooksDao.deleteBook(book);
+                dataBooksView.DataSource = BooksDao.showBooksTable();
+            }
+            
         }
     }
 }
