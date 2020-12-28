@@ -15,8 +15,6 @@ namespace OnlineLibrary.db.daos
     {
         public static void insertBook(Book book)
         {
-            //DateTime today = DateTime.Today;
-            //book.DateAdded = today;
             MySqlConnection con = DBConnection.getConnection();
 
             if (con == null)
@@ -38,7 +36,7 @@ namespace OnlineLibrary.db.daos
                 {
                     MessageBox.Show("Email existent", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                else 
                 {
                     MessageBox.Show("Carte inserata cu succes", "Confirmare", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GUIController.checkInsertSucces = true;
@@ -60,6 +58,24 @@ namespace OnlineLibrary.db.daos
             }
             string query = "Select * from books";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable issuedBooksTable()
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if(con==null)
+            {
+                throw new Exception("Conexiunea la baza de date nu s-a realizat");
+            }
+            string query = "SELECT * from booksissued WHERE `Nume Prenume`=@numeprenume";
+           /* MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT * from booksissued WHERE `Nume Prenume`=@numeprenume";
+            cmd.Parameters.AddWithValue("@numeprenume", GUIController.getFullName);*/
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.SelectCommand.Parameters.AddWithValue("@numeprenume", GUIController.getFullName);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
@@ -142,6 +158,70 @@ namespace OnlineLibrary.db.daos
             }
             con.Close();
         }
+        
+        public static void returnBook(BookReturned book)
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if (con == null)
+            {
+                throw new Exception("Nu s-a putut realiza conexiunea");
+            }
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "INSERT INTO booksreturned(`Nume Prenume`,Autor,`Titlu Carte`,`Data Publicare`,Limba,`Nr Pagini`,`Data Imprumut`,`Data Returnare`) VALUES(@numeprenume,@autor,@titlucarte,@datapublicare,@limba,@nrpagini,@dataimprumut,@datareturnare)";
+            cmd.Parameters.AddWithValue("@numeprenume", book.Fullname);
+            cmd.Parameters.AddWithValue("@autor", book.Author);
+            cmd.Parameters.AddWithValue("@titlucarte", book.BookName);
+            cmd.Parameters.AddWithValue("@datapublicare", book.DateAdded);
+            cmd.Parameters.AddWithValue("@limba", book.Language);
+            cmd.Parameters.AddWithValue("@nrpagini", book.NumberOfPages);
+            cmd.Parameters.AddWithValue("dataimprumut", book.DateIssued);
+            cmd.Parameters.AddWithValue("@datareturnare", book.DateReturned);
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                MessageBox.Show("Nu s-a putut returna cartea", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                GUIController.checkBookReturnedSuccess = true;
+                MessageBox.Show("Cartea a fost returnata", "Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            con.Close();
+        }
 
+        public static void deleteIssuedBook(BookIssued book)
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if (con == null)
+            {
+                throw new Exception("Nu s-a putut realiza conexiunea");
+            }
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "DELETE FROM booksissued WHERE `Nume Prenume`=@numeprenume AND `Titlu Carte`=@titlucarte";
+            cmd.Parameters.AddWithValue("@numeprenume", book.Fullname);
+            cmd.Parameters.AddWithValue("@titlucarte", book.BookName);
+            if (cmd.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Stergerea nu s-a putut face.");
+            }
+            else
+            {
+                GUIController.checkDeleteIssuedBookSuccess = true;
+            }
+            con.Close();
+        }
+        public static DataTable returnedBooksTable()
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if (con == null)
+            {
+                throw new Exception("Conexiunea la baza de date nu s-a realizat");
+            }
+            string query = "SELECT * from booksreturned WHERE `Nume Prenume`=@numeprenume";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.SelectCommand.Parameters.AddWithValue("@numeprenume", GUIController.getFullName);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
     }
 }

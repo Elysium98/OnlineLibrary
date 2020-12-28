@@ -108,14 +108,16 @@
             this.returnBooksToolStripMenuItem.Name = "returnBooksToolStripMenuItem";
             this.returnBooksToolStripMenuItem.Size = new System.Drawing.Size(160, 54);
             this.returnBooksToolStripMenuItem.Text = "Return Books";
+            this.returnBooksToolStripMenuItem.Click += new System.EventHandler(this.returnBooksToolStripMenuItem_Click);
             // 
             // completeBookDetailsToolStripMenuItem
             // 
             this.completeBookDetailsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("completeBookDetailsToolStripMenuItem.Image")));
             this.completeBookDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.completeBookDetailsToolStripMenuItem.Name = "completeBookDetailsToolStripMenuItem";
-            this.completeBookDetailsToolStripMenuItem.Size = new System.Drawing.Size(226, 54);
-            this.completeBookDetailsToolStripMenuItem.Text = "Complete Book Details";
+            this.completeBookDetailsToolStripMenuItem.Size = new System.Drawing.Size(177, 54);
+            this.completeBookDetailsToolStripMenuItem.Text = "Returned Books";
+            this.completeBookDetailsToolStripMenuItem.Click += new System.EventHandler(this.completeBookDetailsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 

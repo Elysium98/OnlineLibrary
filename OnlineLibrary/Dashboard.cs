@@ -89,5 +89,17 @@ namespace OnlineLibrary
             showBooks viewbooks = new showBooks();
             viewbooks.Show();
         }
+
+        private void returnBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReturnBook returnBook = new ReturnBook();
+            returnBook.Show();
+        }
+
+        private void completeBookDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReturnedBooks rtb = new ReturnedBooks();
+            rtb.Show();
+        }
     }
 }
