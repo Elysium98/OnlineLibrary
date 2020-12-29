@@ -25,6 +25,7 @@ namespace OnlineLibrary
         {
             //dataBooksView.Columns[0].DefaultCellStyle.Format = "d";
             dataBooksView.DataSource = BooksDao.showBooksTable();
+            
             if(GUIController.roleAccess.Equals("student"))
             {
                 textAuthor.Hide();
@@ -40,10 +41,8 @@ namespace OnlineLibrary
                 pictureBox4.Hide();
                 pictureBox5.Hide();
             }
-            else
-            {
-                btn_Issue.Hide();
-            }
+          
+            
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)

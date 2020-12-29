@@ -86,7 +86,7 @@ namespace OnlineLibrary
 
         private void issueBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showBooks viewbooks = new showBooks();
+            IssueBooks viewbooks = new IssueBooks();
             viewbooks.Show();
         }
 

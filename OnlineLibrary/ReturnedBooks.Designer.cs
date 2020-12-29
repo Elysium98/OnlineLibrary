@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnedBooks));
             this.returnedbooksView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.returnedbooksView1)).BeginInit();
             this.SuspendLayout();
@@ -36,22 +40,55 @@
             // 
             this.returnedbooksView1.AllowUserToAddRows = false;
             this.returnedbooksView1.AllowUserToDeleteRows = false;
+            this.returnedbooksView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.returnedbooksView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.returnedbooksView1.BackgroundColor = System.Drawing.Color.White;
+            this.returnedbooksView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.returnedbooksView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.returnedbooksView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.returnedbooksView1.Location = new System.Drawing.Point(0, 0);
+            this.returnedbooksView1.EnableHeadersVisualStyles = false;
+            this.returnedbooksView1.GridColor = System.Drawing.Color.Black;
+            this.returnedbooksView1.Location = new System.Drawing.Point(0, 2);
+            this.returnedbooksView1.Margin = new System.Windows.Forms.Padding(2);
             this.returnedbooksView1.Name = "returnedbooksView1";
             this.returnedbooksView1.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.returnedbooksView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.returnedbooksView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.returnedbooksView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.returnedbooksView1.RowTemplate.Height = 24;
-            this.returnedbooksView1.Size = new System.Drawing.Size(1031, 425);
-            this.returnedbooksView1.TabIndex = 0;
+            this.returnedbooksView1.Size = new System.Drawing.Size(1209, 381);
+            this.returnedbooksView1.TabIndex = 3;
             // 
-            // ReturnedBookscs
+            // ReturnedBooks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 520);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1208, 718);
             this.Controls.Add(this.returnedbooksView1);
-            this.Name = "ReturnedBookscs";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ReturnedBooks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReturnedBookscs";
             this.Load += new System.EventHandler(this.ReturnedBookscs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.returnedbooksView1)).EndInit();

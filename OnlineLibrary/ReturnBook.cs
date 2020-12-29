@@ -16,6 +16,7 @@ namespace OnlineLibrary
     public partial class ReturnBook : Form
     {
         BookIssued bookIssued = new BookIssued();
+        Book book = new Book();
         public ReturnBook()
         {
             InitializeComponent();
@@ -76,5 +77,7 @@ namespace OnlineLibrary
                 }
             }
         }
+
+      
     }
 }
