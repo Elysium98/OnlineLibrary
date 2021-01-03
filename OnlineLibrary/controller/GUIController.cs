@@ -39,5 +39,6 @@ namespace OnlineLibrary.controller
         public static Boolean checkBookIssueSuccess;
         public static Boolean checkBookReturnedSuccess;
         public static Boolean checkDeleteIssuedBookSuccess;
+        public static Boolean numberOfIssuedBooks;
     }
 }

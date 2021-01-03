@@ -56,7 +56,6 @@ namespace OnlineLibrary
             try
             {
                 BooksDao.returnBook(bookReturned);
-
             }
             catch(Exception exp)
             {

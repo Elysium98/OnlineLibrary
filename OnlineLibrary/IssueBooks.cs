@@ -30,27 +30,35 @@ namespace OnlineLibrary
 
         private void btn_Issue_Click(object sender, EventArgs e)
         {
-            BookIssued bookissued = new BookIssued();
-            bookissued.Author = book.Author;
-            bookissued.BookName = book.BookName;
-            bookissued.Fullname = GUIController.getFullName;
-            bookissued.Language = book.Language;
-            bookissued.NumberOfPages = book.NumberOfPages;
-            bookissued.DateAdded = book.DateAdded;
-            var date = DateTime.Now.ToString("yyyy.MM.dd");
-            bookissued.DateIssued = Convert.ToDateTime(date);
-            try
+            BooksDao.getNumberOfIssuedBooks();
+            if (GUIController.numberOfIssuedBooks == true)
             {
-                BooksDao.issueBook(bookissued);
+                BookIssued bookissued = new BookIssued();
+                bookissued.Author = book.Author;
+                bookissued.BookName = book.BookName;
+                bookissued.Fullname = GUIController.getFullName;
+                bookissued.Language = book.Language;
+                bookissued.NumberOfPages = book.NumberOfPages;
+                bookissued.DateAdded = book.DateAdded;
+                var date = DateTime.Now.ToString("yyyy.MM.dd");
+                bookissued.DateIssued = Convert.ToDateTime(date);
+                try
+                {
+                    BooksDao.issueBook(bookissued);
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Nicio carte selectata", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (GUIController.checkBookIssueSuccess == true)
+                {
+                    BooksDao.deleteBook(book);
+                    dataBooksView.DataSource = BooksDao.showBooksTable();
+                }
             }
-            catch (Exception exp)
+            else
             {
-                MessageBox.Show("Nicio carte selectata", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if (GUIController.checkBookIssueSuccess == true)
-            {
-                BooksDao.deleteBook(book);
-                dataBooksView.DataSource = BooksDao.showBooksTable();
+                MessageBox.Show("Prea multe carti imprumutate", "Atentionare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

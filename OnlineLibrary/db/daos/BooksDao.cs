@@ -223,5 +223,27 @@ namespace OnlineLibrary.db.daos
             adapter.Fill(dt);
             return dt;
         }
+
+        public static void getNumberOfIssuedBooks()
+        {
+            MySqlConnection con = DBConnection.getConnection();
+            if(con==null)
+            {
+                throw new Exception("Conexiunea nu s-a putut realiza");
+            }
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT COUNT(*) FROM booksissued WHERE `Nume Prenume`=@numeprenume";
+            cmd.Parameters.AddWithValue("@numeprenume", GUIController.getFullName);
+            if(Convert.ToInt32(cmd.ExecuteScalar())<3)
+            {
+                GUIController.numberOfIssuedBooks = true;
+            }
+            else
+            {
+                GUIController.numberOfIssuedBooks = false;
+            }
+            con.Close();
+        }
+
     }
 }
